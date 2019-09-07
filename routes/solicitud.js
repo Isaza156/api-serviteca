@@ -3,9 +3,14 @@ const router = Router();
 const _ = require('underscore');
 const Servicio = require('../models/servicio');
 
-router.get('/', (req, res) => {
-    res.json(Servicio);
-});
+ router.get('/',  (req, res) => {   
+     res.json(Servicio);
+ });
+
+// router.get('/', async (req, res) => {
+//          const Servicio = await Servicio.find();
+//          res.json(Servicio);
+//      });
 
 router.post('/', (req, res) => {
     const { Mes, Dia, Hora, Tipo, Placa, Cedula, Nombre, Telefono } = req.body;
@@ -14,13 +19,13 @@ router.post('/', (req, res) => {
         if (Hora < 8 || Hora > 18) {
             res.send('Horario Incorrecto');
         } else {
-            _.map(Servicio, (servi) => {
+            _.each(Servicio, (servi) => {
                 if (servi.Mes == Mes && servi.Dia == Dia && servi.Hora == Hora) {
                     res.send('No tenemos Horario o Fecha Disponible');
                 } else {
                     const id = Servicio.length + 1;
                     const newServi = { ...req.body, id } // con los 3 puntos ... pasa todo el objeto req.body dentro de un nuevo objeto, asi podremos guardar       
-                    Servicio.push(newServi.saved());
+                    Servicio.push(newServi);
                     res.json(Servicio);
                 }
             });
