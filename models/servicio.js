@@ -1,15 +1,15 @@
 const { Schema, model } = require('mongoose');
 
 const ServicioSchema = new Schema({
-    mes: { type: Number, required: true },
-    dia: { type: Number, required: true },
-    hora: { type: Number, required: true },
-    servicio: { type: Number, required: true },
-    placa: { type: String, required: true },
-    cedula: { type: Number, required: true },
-    nombre: { type: String, required: true },
-    telefono: { type: Number, required: true },
+    Mes: Number,
+    Dia: Number,     
+    Hora: Number,
+    Tipo: Number,
+    Placa: String,
+    Cedula: Number,
+    Nombre: Number,
+    Telefono: Number,
     created_since: { type: Date, default: Date.now }
-});
+},{timestamps:true});
 
 module.exports = model('Servicio', ServicioSchema);
