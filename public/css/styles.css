@@ -1,0 +1,49 @@
+body {    
+    display: flex;
+    color: #fff;       
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: #333;
+    height: 100%;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.cover-container {
+    max-width: 42em;
+}
+.masthead {
+    margin-bottom: 2rem;
+}
+.masthead-brand {
+    margin-bottom: 0;
+}
+.nav-masthead .active {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+.nav-masthead .nav-link {
+    padding: .25rem 0;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+}
+.nav-masthead .nav-link + .nav-link {
+    margin-left: 1rem;
+}
+a, a:focus, a:hover {
+    color: #fff;
+}
+.cover {
+    padding: 0 1.5rem;
+}
+.mastfoot {
+    color: rgba(255, 255, 255, .5);
+}
